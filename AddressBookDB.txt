@@ -38,3 +38,33 @@ Query OK, 0 rows affected (0.01 sec)
 mysql> INSERT INTO AddressBook (firstName, lastName, address, city, state, zip, phoneNumber, email)
     -> VALUES ('DJ', 'S', '123 Main St', 'AnyCity', 'Anystate', '12345', '123-456-7890', 'djs@email.com');
 Query OK, 1 row affected (0.01 sec)
+
+
+//UC4
+
+mysql> SELECT * FROM AddressBook;
++-----------+----------+-------------+---------+----------+-------+--------------+---------------+
+| firstName | lastName | address     | city    | state    | zip   | phoneNumber  | email         |
++-----------+----------+-------------+---------+----------+-------+--------------+---------------+
+| DJ        | S        | 123 Main St | AnyCity | Anystate | 12345 | 123-456-7890 | djs@email.com |
++-----------+----------+-------------+---------+----------+-------+--------------+---------------+
+1 row in set (0.00 sec)
+
+mysql> UPDATE AddressBook
+    -> SET address = '456 Elm St',
+    ->     city = 'Newtown',
+    ->     state = 'Newstate',
+    ->     zip = '67890',
+    ->     phoneNumber = '987-654-3210',
+    ->     email = 'newemail@email.com'
+    -> WHERE firstName = 'DJ' AND lastName = 'S';
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> SELECT * FROM AddressBook;
++-----------+----------+------------+---------+----------+-------+--------------+--------------------+
+| firstName | lastName | address    | city    | state    | zip   | phoneNumber  | email              |
++-----------+----------+------------+---------+----------+-------+--------------+--------------------+
+| DJ        | S        | 456 Elm St | Newtown | Newstate | 67890 | 987-654-3210 | newemail@email.com |
++-----------+----------+------------+---------+----------+-------+--------------+--------------------+
+
