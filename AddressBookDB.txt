@@ -178,3 +178,30 @@ mysql> SELECT * FROM AddressBook;
 | Vane      | Crane    | 436 Oak St     | Riverdale   | StateB | 23456 | 555-5698    | crane@email.com      | NULL            | NULL |
 +-----------+----------+----------------+-------------+--------+-------+-------------+----------------------+-----------------+------+
 5 rows in set (0.00 sec)
+
+
+//UC10
+
+mysql> SELECT * FROM AddressBook;
++-----------+----------+----------------+-------------+--------+-------+-------------+----------------------+-----------------+--------+
+| firstName | lastName | address        | city        | state  | zip   | phoneNumber | email                | AddressBookName | Type   |
++-----------+----------+----------------+-------------+--------+-------+-------------+----------------------+-----------------+--------+
+| Jane      | Doe      | 456 Oak St     | Riverdale   | StateB | 23456 | 555-5678    | jane.doe@email.com   | AB1             | family |
+| Jim       | Beam     | 789 Pine St    | Hill Valley | StateC | 34567 | 555-9012    | jim.beam@email.com   | AB1             | family |
+| John      | Smith    | 123 Maple St   | Springfield | StateA | 12345 | 555-1234    | john.smith@email.com | AB1             | family |
+| Mary      | Jones    | 101 Apple Blvd | Bedrock     | StateD | 45678 | 555-3456    | mary.jones@email.com | AB2             | work   |
+| Vane      | Crane    | 436 Oak St     | Riverdale   | StateB | 23456 | 555-5698    | crane@email.com      | AB2             | work   |
++-----------+----------+----------------+-------------+--------+-------+-------------+----------------------+-----------------+--------+
+5 rows in set (0.00 sec)
+
+mysql> SELECT Type, COUNT(*) as NumberOfContacts
+    -> FROM AddressBook
+    -> GROUP BY Type;
++--------+------------------+
+| Type   | NumberOfContacts |
++--------+------------------+
+| family |                3 |
+| work   |                2 |
++--------+------------------+
+2 rows in set (0.00 sec)
+
