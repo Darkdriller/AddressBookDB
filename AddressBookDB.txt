@@ -83,3 +83,23 @@ mysql> SELECT * FROM AddressBook;
 mysql> DELETE FROM AddressBook
     -> WHERE firstName = 'DJ' AND lastName = 'S';
 Query OK, 1 row affected (0.00 sec)
+
+
+//UC 6
+
+mysql> INSERT INTO AddressBook VALUES ('John', 'Smith', '123 Maple St', 'Springfield', 'StateA', '12345', '555-1234', 'john.smith@email.com'),
+    -> ('Jane', 'Doe', '456 Oak St', 'Riverdale', 'StateB', '23456', '555-5678', 'jane.doe@email.com'),
+    -> ('Jim', 'Beam', '789 Pine St', 'Hill Valley', 'StateC', '34567', '555-9012', 'jim.beam@email.com'),
+    -> ('Mary', 'Jones', '101 Apple Blvd', 'Bedrock', 'StateD', '45678', '555-3456', 'mary.jones@email.com');
+Query OK, 4 rows affected (0.00 sec)
+Records: 4  Duplicates: 0  Warnings: 0
+
+mysql> SELECT * FROM AddressBook
+    -> WHERE city = 'Riverdale' OR state = 'StateC';
++-----------+----------+-------------+-------------+--------+-------+-------------+--------------------+
+| firstName | lastName | address     | city        | state  | zip   | phoneNumber | email              |
++-----------+----------+-------------+-------------+--------+-------+-------------+--------------------+
+| Jane      | Doe      | 456 Oak St  | Riverdale   | StateB | 23456 | 555-5678    | jane.doe@email.com |
+| Jim       | Beam     | 789 Pine St | Hill Valley | StateC | 34567 | 555-9012    | jim.beam@email.com |
++-----------+----------+-------------+-------------+--------+-------+-------------+--------------------+
+2 rows in set (0.00 sec)
