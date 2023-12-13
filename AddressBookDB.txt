@@ -158,3 +158,23 @@ mysql> SELECT * FROM AddressBook
 | Jane      | Doe      | 456 Oak St | Riverdale | StateB | 23456 | 555-5678    | jane.doe@email.com |
 | Vane      | Crane    | 436 Oak St | Riverdale | StateB | 23456 | 555-5698    | crane@email.com    |
 +-----------+----------+------------+-----------+--------+-------+-------------+--------------------+
+
+
+//UC 9
+mysql> ALTER TABLE AddressBook
+    -> ADD COLUMN AddressBookName VARCHAR(50),
+    -> ADD COLUMN Type VARCHAR(50);
+Query OK, 0 rows affected (0.01 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> SELECT * FROM AddressBook;
++-----------+----------+----------------+-------------+--------+-------+-------------+----------------------+-----------------+------+
+| firstName | lastName | address        | city        | state  | zip   | phoneNumber | email                | AddressBookName | Type |
++-----------+----------+----------------+-------------+--------+-------+-------------+----------------------+-----------------+------+
+| Jane      | Doe      | 456 Oak St     | Riverdale   | StateB | 23456 | 555-5678    | jane.doe@email.com   | NULL            | NULL |
+| Jim       | Beam     | 789 Pine St    | Hill Valley | StateC | 34567 | 555-9012    | jim.beam@email.com   | NULL            | NULL |
+| John      | Smith    | 123 Maple St   | Springfield | StateA | 12345 | 555-1234    | john.smith@email.com | NULL            | NULL |
+| Mary      | Jones    | 101 Apple Blvd | Bedrock     | StateD | 45678 | 555-3456    | mary.jones@email.com | NULL            | NULL |
+| Vane      | Crane    | 436 Oak St     | Riverdale   | StateB | 23456 | 555-5698    | crane@email.com      | NULL            | NULL |
++-----------+----------+----------------+-------------+--------+-------+-------------+----------------------+-----------------+------+
+5 rows in set (0.00 sec)
