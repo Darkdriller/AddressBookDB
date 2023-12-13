@@ -245,3 +245,8 @@ mysql> SELECT ab.firstName, ab.lastName, ab.address, ab.city, ab.state, ab.zip, 
 | Jane      | Doe      | 456 Oak St | Riverdale | StateB | 23456 | 555-5678    | jane.doe@email.com | work     |
 +-----------+----------+------------+-----------+--------+-------+-------------+--------------------+----------+
 2 rows in set (0.00 sec)
+
+
+//UC12
+
+Find SS of ER in Github
