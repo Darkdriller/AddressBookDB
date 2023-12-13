@@ -33,3 +33,8 @@ mysql> CREATE TABLE AddressBook (
     -> );
 Query OK, 0 rows affected (0.01 sec)
 
+//UC 3
+
+mysql> INSERT INTO AddressBook (firstName, lastName, address, city, state, zip, phoneNumber, email)
+    -> VALUES ('DJ', 'S', '123 Main St', 'AnyCity', 'Anystate', '12345', '123-456-7890', 'djs@email.com');
+Query OK, 1 row affected (0.01 sec)
